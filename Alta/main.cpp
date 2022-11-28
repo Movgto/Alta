@@ -6,6 +6,7 @@ using namespace std;
 bool run = true;
 char op;
 int juegosReg = 0;
+char a;
 
 struct videojuegos
 {
@@ -31,7 +32,7 @@ void main()
 		cout << "MENU";
 		signos(5, '*');
 		cout << endl;
-		cout << "\t1.Agregar\n\t2.Modificar\n\t3.Ver lista\n\t4.Limpiar\n";
+		cout << "\t1.Agregar\n\t2.Modificar\n\t3.Ver lista\n\t4.Limpiar\n\t5.Salir\n";
 		op = _getche();
 		cout << endl;
 		
@@ -70,6 +71,20 @@ void main()
 		case '4':
 			  system("cls");
 			  break;
+		case '5':
+			cout << "Cerrando programa... Está seguro que desea salir?";
+			cout << "\n\t1.Si\n\t2.No\n";
+			a = _getche();
+			switch(a)
+			{
+			 case '1':
+				 run = false;
+				 break;
+			 case '2':
+				 cout << "Volviendo al menu...\n";
+				 break;
+			}
+			break;
 
 		
 		default:
@@ -79,6 +94,8 @@ void main()
 			  
 		}
 	}
+
+	system("pause>null");
 }
 
 void signos(int numeroSignos, char signo) 
